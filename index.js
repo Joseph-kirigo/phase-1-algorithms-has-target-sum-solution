@@ -1,5 +1,29 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+// const emptyArray=[]
+// for(let i=0; i<array.length; i++){
+//   for(let k=i+1;k<array.length; k++){
+//     if(target===array[i]+array[k]){
+//       emptyArray.push(array[i],array[k])
+//     }
+
+//   }
+
+// }
+// return emptyArray;
+
+// return false;
+let seenNumbers = new Set();
+  for (const num of array) {
+    const complement = target - num;
+    if(seenNumbers.has(complement)){
+      return true;
+    }
+    else{
+      seenNumbers.add(num)
+    }
+  }
+  return false
 }
 
 /* 
